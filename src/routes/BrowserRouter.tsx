@@ -4,7 +4,7 @@ import NotFoundPage from '~/pages/404'
 import ForgotPasswordPage from '~/pages/auth/forgot-password'
 import LoginPage from '~/pages/auth/login'
 import RegisterPage from '~/pages/auth/register'
-import DashboardPage from '~/pages/dashboard'
+import Student from '~/pages/student'
 import HomePage from '~/pages/home'
 import { routePath } from './routePath'
 
@@ -43,10 +43,10 @@ const BrowserRouter = () => {
       ),
     },
     {
-      path: routePath.dashboard,
+      path: routePath.student,
       element: (
         <DefaultLayout>
-          <DashboardPage />
+          <Student />
         </DefaultLayout>
       ),
     },

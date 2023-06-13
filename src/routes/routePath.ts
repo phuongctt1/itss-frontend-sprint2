@@ -3,6 +3,6 @@ export const routePath = {
   login: '/auth/login',
   register: '/auth/register',
   forgotPassword: '/auth/forgot-password',
-  dashboard: '/dashboard',
+  student: '/student',
   notFound: '*',
 }
