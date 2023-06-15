@@ -5,7 +5,7 @@ import { data } from './data';
 import { Badge } from 'antd';
 import { CheckCircleOutlined, ExclamationCircleOutlined, ClockCircleOutlined } from '@ant-design/icons';
 
-const ColLeft = () => {
+const Studentlist = () => {
   return (
     <Wrapper>
       <PersonList>
@@ -46,7 +46,10 @@ const ColLeft = () => {
                   <h3 className='fullname'>{person.fullName}</h3>
                   <Badge color={badgeColor} icon={badgeIcon} />
                 </div>
-                <p className='nofication'>{person.nofication}</p>
+                <div className='inforstudent'>
+                <p className='mail'>{`メール: ${person.mail}`}</p>
+                <p className='phone'>{`電話番号: ${person.phone}`}</p>
+                </div>
               </PersonInfo>
             </Person>
           );
@@ -57,7 +60,8 @@ const ColLeft = () => {
 };
 
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+`
 
 
 
@@ -88,11 +92,25 @@ const PersonInfo = styled.div`
     align-items: center;
     justify-content: space-between;
   }
-
-  .other {
+  .inforstudent{
     display: flex;
-    gap: 20px;
+    align-items: center;
+    justify-content: space-between; 
+    gap: 80px;
+
   }
+  .mail {
+
+    margin-left: 10px;
+    white-space: nowrap;
+  }
+
+  .phone {
+ 
+    margin-right: 60px;
+    white-space: nowrap;// khoang cach dau space phone: sdt
+  }
+
 `
 
-export default ColLeft
+export default Studentlist
