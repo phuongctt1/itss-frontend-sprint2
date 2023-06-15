@@ -1,23 +1,40 @@
-import { Button, Input, Rate } from 'antd'
-import { BiUserCircle } from 'react-icons/bi'
-import { FaSort } from 'react-icons/fa'
-import styled from 'styled-components'
-import { data } from './data'
+import React from 'react';
+import { BiUserCircle } from 'react-icons/bi';
+import styled from 'styled-components';
+import { data } from './data';
+import { Badge } from 'antd';
+import { CheckCircleOutlined, ExclamationCircleOutlined, ClockCircleOutlined } from '@ant-design/icons';
 
 const ColLeft = () => {
-
-  
   return (
     <Wrapper>
-    
-
       <PersonList>
         {data.map((person, index) => {
           const renderAvatar = () => {
             if (person.avatar) {
-              return <img src={person.avatar} alt='Avatar' />
+              return <img src={person.avatar} alt='Avatar' />;
             }
-            return <BiUserCircle className='avatar-icon' />
+            return <BiUserCircle className='avatar-icon' />;
+          };
+
+          let badgeColor: 'green' | 'red' | 'default' = 'default';
+          let badgeIcon: React.ReactNode | null = null;
+
+          switch (person.status) {
+            case 'approved':
+              badgeColor = 'green';
+              badgeIcon = <CheckCircleOutlined />;
+              break;
+            case 'pending':
+              badgeColor = 'red';
+              badgeIcon = <ExclamationCircleOutlined />;
+              break;
+            case 'unread':
+              badgeColor = 'default';
+              badgeIcon = <ClockCircleOutlined />;
+              break;
+            default:
+              break;
           }
 
           return (
@@ -27,18 +44,18 @@ const ColLeft = () => {
               <PersonInfo>
                 <div className='header'>
                   <h3 className='fullname'>{person.fullName}</h3>
-                  
+                  <Badge color={badgeColor} icon={badgeIcon} />
                 </div>
                 <p className='nofication'>{person.nofication}</p>
-                
               </PersonInfo>
             </Person>
-          )
+          );
         })}
       </PersonList>
     </Wrapper>
-  )
-}
+  );
+};
+
 
 const Wrapper = styled.div``
 
@@ -53,7 +70,7 @@ const PersonList = styled.div`
   overflow: auto;
 `
 const Person = styled.div`
-  border: 1px solid;
+  border: none;
   border-radius: 8px;
   display: flex;
 
