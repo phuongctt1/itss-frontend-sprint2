@@ -14,8 +14,8 @@ const Header = () => {
           <Link to={routePath.home}>
             <LogoImage src={logo} alt='Logo' />
           </Link>
-          <NavLink to={routePath.dashboard} className={({ isActive }) => (isActive ? 'active' : '')}>
-            Dashboard
+          <NavLink to={routePath.student} className={({ isActive }) => (isActive ? 'active' : '')}>
+            Student
           </NavLink>
         </div>
         <nav className=''>
