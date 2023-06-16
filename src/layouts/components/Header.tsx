@@ -23,6 +23,7 @@ const Header = () => {
             <NavLink to={routePath.login} className={({ isActive }) => (isActive ? 'active' : '')}>
               Login
             </NavLink>
+
             <span className=''>/</span>
             <NavLink to={routePath.register} className={({ isActive }) => (isActive ? 'active' : '')}>
               Register
