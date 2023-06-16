@@ -17,7 +17,7 @@ const Studentlist = () => {
             return <BiUserCircle className='avatar-icon' />;
           };
 
-          let badgeColor: 'green' | 'red' | 'default' = 'default';
+          let badgeColor: 'green' | 'red' | 'gray' = 'gray';
           let badgeIcon: React.ReactNode | null = null;
 
           switch (person.status) {
@@ -30,8 +30,8 @@ const Studentlist = () => {
               badgeIcon = <ExclamationCircleOutlined />;
               break;
             case 'unread':
-              badgeColor = 'default';
-              badgeIcon = <ClockCircleOutlined />;
+              badgeColor = 'gray';
+              badgeIcon = <CheckCircleOutlined />;
               break;
             default:
               break;
@@ -61,6 +61,7 @@ const Studentlist = () => {
 
 
 const Wrapper = styled.div`
+
 `
 
 

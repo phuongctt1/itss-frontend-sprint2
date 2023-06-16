@@ -7,7 +7,7 @@ interface DotBadgeProps {
 }
 
 const DotBadge: React.FC<DotBadgeProps> = ({ status }) => {
-  let badgeColor: 'green' | 'red' | 'default' = 'default';
+  let badgeColor: 'green' | 'red' | 'gray' = 'gray';
   let badgeIcon: React.ReactNode = null;
 
   switch (status) {
@@ -20,8 +20,8 @@ const DotBadge: React.FC<DotBadgeProps> = ({ status }) => {
       badgeIcon = <ExclamationCircleOutlined />;
       break;
     case 'unread':
-      badgeColor = 'default';
-      badgeIcon = <ClockCircleOutlined />;
+      badgeColor = 'gray';
+      badgeIcon = <CheckCircleOutlined />;
       break;
     default:
       break;
